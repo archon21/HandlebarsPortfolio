@@ -8,6 +8,7 @@ const fs = require('fs');
 
 // Our files
 const routes = require('./routes');
+const { images } = require('./db/db.js');
 
 // Instantiate app and create PORT variable
 const PORT = process.env.PORT || 3000;
@@ -21,7 +22,7 @@ app.set('view engine', 'handlebars');
 app.use(express.json());
 
 // Send public directory
-app.use(express.static(path.join(__dirname, '/public')));
+app.use(express.static(path.join(__dirname, '..', 'public')));
 
 // Register routes with app
 app.use(routes);

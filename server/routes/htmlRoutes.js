@@ -1,7 +1,9 @@
 const router = require('express').Router();
 
+const {images } = require('../db/db')
+
 router.get('/', (req, res) => {
-  return res.render('home');
+  return res.render('home', {image: images[0]});
 });
 
 router.get('/contact', (req, res) => {
