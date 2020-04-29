@@ -1,6 +1,6 @@
 //NPM Libraries
 const express = require('express');
-const exphbs = require('express-handlebars');
+const expressHandlebars = require('express-handlebars');
 
 // Modules
 const path = require('path');
@@ -8,14 +8,13 @@ const fs = require('fs');
 
 // Our files
 const routes = require('./routes');
-const { images } = require('./db/db.js');
 
 // Instantiate app and create PORT variable
 const PORT = process.env.PORT || 3000;
 const app = express();
 
 // Set handlebars as our engine
-app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
+app.engine('handlebars', expressHandlebars({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 
 // Body parsing middleware
